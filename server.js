@@ -9,7 +9,7 @@ const session = require('express-session');
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 const authController = require('./controllers/auth.js');
-//const camInventoryController = require('./controllers/inventory.js');
+const inventoriesController = require('./controllers/inventories.js');
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
@@ -35,13 +35,16 @@ app.use(passUserToView);
 
 app.get('/', (req, res) => {
     if (req.session.user) {
-        res.redirect(`/users/${req.session.user.__id}/inventory`);
+        res.redirect(`/users/${req.session.user._id}/inventory`);
     } else {
         res.render('index');
     }
 });
 
 app.use('/auth', authController);
+
+app.use(isSignedIn);
+app.use('/users/:userId/inventory', inventoriesController);
 
 app.listen(port, () => {
     console.log(`app listening on port ${port}`);
