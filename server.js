@@ -8,6 +8,12 @@ const morgan = require('morgan');
 const session = require('express-session');
 const port = process.env.PORT ? process.env.PORT : '3000';
 
+const authController = require('./controllers/auth.js');
+//const camInventoryController = require('./controllers/inventory.js');
+
+const isSignedIn = require('./middleware/is-signed-in.js');
+const passUserToView = require('./middleware/pass-user-to-view.js');
+
 app.set('view engine', 'ejs');
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -25,10 +31,17 @@ app.use(
         saveUninitialized: true,
     })
 );
+app.use(passUserToView);
 
 app.get('/', (req, res) => {
-    res.render('index');
+    if (req.session.user) {
+        res.redirect(`/users/${req.session.user.__id}/inventory`);
+    } else {
+        res.render('index');
+    }
 });
+
+app.use('/auth', authController);
 
 app.listen(port, () => {
     console.log(`app listening on port ${port}`);
