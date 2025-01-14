@@ -8,6 +8,8 @@ const morgan = require('morgan');
 const session = require('express-session');
 const port = process.env.PORT ? process.env.PORT : '3000';
 
+app.set('view engine', 'ejs');
+
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
     console.log(`connected to MongoDB ${mongoose.connection.name}`);
@@ -23,6 +25,10 @@ app.use(
         saveUninitialized: true,
     })
 );
+
+app.get('/', (req, res) => {
+    res.render('index');
+});
 
 app.listen(port, () => {
     console.log(`app listening on port ${port}`);
