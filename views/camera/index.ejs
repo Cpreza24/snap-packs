@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <%- include('../partials/_navbar.ejs') %>
+        <h1>inventory index page</h1>
+        <div class="inventory-div">
+            <p>Camera Inventory</p>
+            <% if (camera.length === 0) { %>
+                <p>Nothing in camera bag</p>
+            <% } else { %>
+                <ul>
+                    <% camera.forEach(item => { %>
+                        <li><%= camera.make %> <%= camera.model %></li>
+                    <% }) %>
+                </ul>
+                <% } %>
+        </div>
+        <div class="new-camera-container">
+            <a href="/users/<%=user._id%>/camera/new">Add Camera</a>
+        </div>
+    </body>
+</html>
