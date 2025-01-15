@@ -9,7 +9,7 @@ const session = require('express-session');
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 const authController = require('./controllers/auth.js');
-const inventoriesController = require('./controllers/inventories.js');
+const inventoryController = require('./routes/inventory.js');
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
 app.use('/auth', authController);
 
 app.use(isSignedIn);
-app.use('/users/:userId/inventory', inventoriesController);
+app.use('/users/:userId/inventory', inventoryController);
 
 app.listen(port, () => {
     console.log(`app listening on port ${port}`);

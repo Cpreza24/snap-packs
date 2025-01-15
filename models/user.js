@@ -17,6 +17,7 @@ const cameraSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    inBag: Boolean,
 });
 
 const lensSchema = new mongoose.Schema({
@@ -44,6 +45,7 @@ const lensSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    inBag: Boolean,
 });
 
 const userSchema = new mongoose.Schema({
