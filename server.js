@@ -11,6 +11,7 @@ const port = process.env.PORT ? process.env.PORT : '3000';
 const authController = require('./controllers/auth.js');
 const cameraController = require('./routes/camera.js');
 const homeController = require('./routes/home.js');
+const lensController = require('./routes/lens.js');
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
@@ -47,6 +48,7 @@ app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/camera', cameraController);
 app.use('/users/:userId/home', homeController);
+app.use('/users/:userId/lens', lensController);
 
 app.listen(port, () => {
     console.log(`app listening on port ${port}`);
