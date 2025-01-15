@@ -15,7 +15,7 @@
             <% } else { %>
                 <ul>
                     <% camera.forEach(item => { %>
-                        <li><%= camera.make %> <%= camera.model %></li>
+                        <li><a href="/users/<%= user._id %>/camera/<%= item._id %>"><%= item.make %> <%= item.model %></li></a>
                     <% }) %>
                 </ul>
                 <% } %>

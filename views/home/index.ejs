@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= user.username %>'s Profile</title>
 </head>
 <body>
     <%- include('../partials/_navbar') %>
-    <h1>Welcome to my snap packs page</h1>
+    <div class="intro-container">
+        <h1>Hi <%= user.username %>, welcome to your Snap Packs page!</h1>
+        <h2>Keep track of all your camera gear in one place! Log new gear and edit or remove gear anytime. You can checkout specs by clicking on the camera body or lens.</h2>
+    </div>
+    <div>
+        <a href="/users/<%= user._id %>/camera">Camera Gear</a>
+        <a href="/users/<%= user._id %>/lens">Lens Gear</a>
+    </div>
 </body>
 </html>

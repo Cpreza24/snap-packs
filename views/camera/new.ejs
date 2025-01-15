@@ -6,6 +6,23 @@
         <title>Document</title>
     </head>
     <body>
-        <button class="camera-button">New Camera</button>
+        <%- include('../partials/_navbar.ejs') %>
+        <h1>Add Camera</h1>
+        <form action="/users/<%= user._id %>/camera" method="POST">
+            <label for="make">Make</label>
+            <input type="text" name="make">
+            <label for="model">Model</label>
+            <input type="text" name="model">
+            <label for="megapixels">Megapixels</label>
+            <input type="text" name="megapixels" id="">
+            <label for="sensor"></label>
+            <select name="sensor" id="">
+                <option value="apsc">APS-C</option>
+                <option value="full frame">Full Frame</option>
+            </select>
+            <label for="isInBag">In Bag</label>
+            <input type="checkbox" name="isInBag" id="">
+            <button type="submit">Add Gear</button>
+        </form>
     </body>
 </html>
