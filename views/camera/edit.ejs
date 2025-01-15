@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit <%= camera.model %></title>
 </head>
 <body>
-    <h1>edit page</h1>
+    <%- include('../partials/_navbar') %>
+    <h1>edit your <%= camera.model %></h1>
+    <form action="/users/<%= user._id %>/camera/<%= camera._id %>?_method=PUT" method="POST">
+        <label for="make">Make</label>
+        <input type="text" name="make" value="<%= camera.make %>">
+        <label for="model">Model</label>
+        <input type="text" name="model" value="<%= camera.model %>">
+        <label for="megapixels">Megapixels</label>
+        <input type="text" name="megapixels" id="" value="<%= camera.megapixels %>">
+        <label for="sensor"></label>
+        <select name="sensor" id="" value="<%= camera.sensor %>">
+            <option value="apsc">APS-C</option>
+            <option value="full frame">Full Frame</option>
+        </select>
+        <button type="submit">Add Gear</button>
+    </form>
 </body>
 </html>

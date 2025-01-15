@@ -45,7 +45,7 @@ async function postCamera(req, res) {
 
 async function showCamera(req, res) {
     try {
-        const currentUser = await User.findById(req.session.user);
+        const currentUser = await User.findById(req.session.user._id);
         const camera = await currentUser.camera.id(req.params.cameraId);
         res.render('camera/show', { camera: camera });
     } catch (error) {
@@ -54,9 +54,29 @@ async function showCamera(req, res) {
 }
 
 async function editCamera(req, res) {
-    const currentUser = await User.findById(req.session.user);
+    const currentUser = await User.findById(req.session.user._id);
     const camera = currentUser.camera.id(req.params.cameraId);
     res.render('camera/edit', { camera: camera });
 }
 
-module.exports = { index, newCamera, postCamera, showCamera, editCamera };
+async function updateCamera(req, res) {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const camera = currentUser.camera.id(req.params.cameraId);
+        camera.set(req.body);
+        await currentUser.save();
+        res.redirect(`/users/${currentUser._id}/camera/${camera._id}`);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Server error');
+    }
+}
+
+module.exports = {
+    index,
+    newCamera,
+    postCamera,
+    showCamera,
+    editCamera,
+    updateCamera,
+};
