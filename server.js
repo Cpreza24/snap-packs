@@ -9,7 +9,8 @@ const session = require('express-session');
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 const authController = require('./controllers/auth.js');
-const inventoryController = require('./routes/inventory.js');
+const cameraController = require('./routes/camera.js');
+const homeController = require('./routes/home.js');
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
@@ -35,7 +36,7 @@ app.use(passUserToView);
 
 app.get('/', (req, res) => {
     if (req.session.user) {
-        res.redirect(`/users/${req.session.user._id}/inventory`);
+        res.redirect(`/users/${req.session.user._id}/home`);
     } else {
         res.render('index');
     }
@@ -44,7 +45,8 @@ app.get('/', (req, res) => {
 app.use('/auth', authController);
 
 app.use(isSignedIn);
-app.use('/users/:userId/inventory', inventoryController);
+app.use('/users/:userId/camera', cameraController);
+app.use('/users/:userId/home', homeController);
 
 app.listen(port, () => {
     console.log(`app listening on port ${port}`);
