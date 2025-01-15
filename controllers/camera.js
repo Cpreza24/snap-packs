@@ -22,7 +22,7 @@ async function index(req, res) {
             lens: currentUser.lens,
         });
     } catch (error) {
-        console.error(error);
+        res.status(500).send('Internal server error');
     }
 }
 
@@ -31,9 +31,26 @@ function newCamera(req, res) {
     res.render('camera/new');
 }
 
-//New Lense Route
-// function newLens(req, res) {
-//     res.render('inventory/lens-inventory/new');
-// }
+// Create new Camera
+async function postCamera(req, res) {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        currentUser.camera.push(req.body);
+        await currentUser.save();
+        res.redirect(`/users/${currentUser._id}/camera`);
+    } catch (error) {
+        res.status(500).send('Internal server error');
+    }
+}
 
-module.exports = { index, newCamera };
+async function showCamera(req, res) {
+    try {
+        const currentUser = await User.findById(req.session.user);
+        const camera = await currentUser.camera.id(req.params.cameraId);
+        res.render('camera/show', { camera: camera });
+    } catch (error) {
+        res.status(500).send('Internal server error');
+    }
+}
+
+module.exports = { index, newCamera, postCamera, showCamera };
