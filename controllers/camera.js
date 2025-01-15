@@ -53,4 +53,10 @@ async function showCamera(req, res) {
     }
 }
 
-module.exports = { index, newCamera, postCamera, showCamera };
+async function editCamera(req, res) {
+    const currentUser = await User.findById(req.session.user);
+    const camera = currentUser.camera.id(req.params.cameraId);
+    res.render('camera/edit', { camera: camera });
+}
+
+module.exports = { index, newCamera, postCamera, showCamera, editCamera };
