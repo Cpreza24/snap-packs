@@ -75,11 +75,11 @@ async function updateCamera(req, res) {
 async function deleteCamera(req, res) {
     try {
         const currentUser = await User.findById(req.session.user);
-        const camera = currentUser.camera.id(req.params.cameraId).deleteOne();
+        currentUser.camera.id(req.params.cameraId).deleteOne();
 
         await currentUser.save();
 
-        res.redirect('/users/${currentUser._id}/camera');
+        res.redirect(`/users/${currentUser._id}/camera`);
     } catch (error) {}
 }
 
