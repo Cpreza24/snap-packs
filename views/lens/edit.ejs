@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= lens.make %> <%= lens.focalLength %></title>
+</head>
+<body>
+    <%- include('../partials/_navbar') %>
+    <h1>Edit lens</h1>
+    <form action="/users/<%= user._id %>/lens/<%= lens._id %>?_method=PUT" method="POST">
+        <label for="make">Make</label>
+        <input type="text" name="make" value="<%= lens.make %>">
+        <label for="focalLength">Focal Length</label>
+        <input type="text" name="focalLength" value="<%= lens.focalLength %>">
+        <label for="aperture">Aperture</label>
+        <input type="text" name="aperture" id="" value="<%= lens.aperture %>">
+        <label for="sensor">Sensor</label>
+        <select name="sensor" id="" value="<%= lens.sensor %>">
+            <option value="APS-C">APS-C</option>
+            <option value="Full Frame">Full Frame</option>
+        </select>
+        <label for="zoom">Zoom</label>
+        <select name="zoom" id="" value="<%= lens.zoom %>">
+            <option value="Zoom">Zoom</option>
+            <option value="Prime">Prime</option>
+        </select>
+        <label for="focus">Focus</label>
+        <select name="focus" id="" value="<%= lens.focus %>">
+            <option value="Auto-Focus">Auto Focus</option>
+            <option value="Manual Focus">Manual Focus</option>
+        </select>
+        <button type="submit">Add Lens</button>
+    </form>
+</body>
+</html>
