@@ -17,6 +17,10 @@ const cameraSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    type: {
+        type: String,
+        required: true,
+    },
     //isInBag: Boolean,
 });
 
@@ -26,7 +30,7 @@ const lensSchema = new mongoose.Schema({
         required: true,
     },
     focalLength: {
-        type: Number,
+        type: String,
         required: true,
     },
     aperture: {

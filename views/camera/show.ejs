@@ -14,6 +14,7 @@
                 <%= camera.sensor %> 
                 <%= camera.megapixels %>
                 <%= camera.isInBag %>
+                <%= camera.type %>
             </p>
             <a href="/users/<%= user._id %>/camera/<%= camera._id %>/edit">Edit</a>
             <form action="/users/<%= user._id %>/camera/<%= camera._id %>?_method=DELETE" method="POST">

@@ -15,10 +15,16 @@
             <input type="text" name="model">
             <label for="megapixels">Megapixels</label>
             <input type="text" name="megapixels" id="">
-            <label for="sensor"></label>
+            <label for="type">Type</label>
+            <select name="type" id="">
+                <option value="DSLR">DSLR</option>
+                <option value="Mirrorless">Mirrorless</option>
+                <option value="Film">Film</option>
+            </select>
+            <label for="sensor">Sensor</label>
             <select name="sensor" id="">
-                <option value="apsc">APS-C</option>
-                <option value="full frame">Full Frame</option>
+                <option value="APS-C">APS-C</option>
+                <option value="Full Frame">Full Frame</option>
             </select>
             <button type="submit">Add Gear</button>
         </form>

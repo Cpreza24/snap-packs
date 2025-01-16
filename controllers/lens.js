@@ -1,4 +1,3 @@
-const { UnorderedBulkOperation } = require('mongodb');
 const User = require('../models/user.js');
 
 //Index
