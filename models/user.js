@@ -25,8 +25,8 @@ const lensSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    model: {
-        type: String,
+    focalLength: {
+        type: Number,
         required: true,
     },
     aperture: {

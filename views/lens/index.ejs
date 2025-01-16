@@ -8,5 +8,19 @@
 <body>
     <%- include('../partials/_navbar') %>
     <h1>Lens Index</h1>
+    <a href="/users/<%=user._id%>/lens/new">New Lens</a>
+    <div>
+        <% if (lens.length === 0) { %>
+            <p>No lenses stored</p>
+        <% } else { %>
+            <ul>
+                <% lens.forEach(item => { %>
+                    <li>
+                        <a href="/users/<%= user._id %>/lens/<%= item._id %>"><%= item.make %> <%= item.focalLength %>mm</a>
+                    </li>
+                <% }) %>
+            </ul>
+            <% } %> 
+    </div>
 </body>
 </html>

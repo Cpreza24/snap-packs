@@ -6,6 +6,31 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>New lens</h1>
+    <%- include('../partials/_navbar') %>
+    <h1>Add lens</h1>
+    <form action="/users/<%= user._id %>/lens" method="POST">
+        <label for="make">Make</label>
+        <input type="text" name="make">
+        <label for="focalLength">Focal Length</label>
+        <input type="text" name="focalLength">
+        <label for="aperture">Aperture</label>
+        <input type="text" name="aperture" id="">
+        <label for="sensor">Sensor</label>
+        <select name="sensor" id="">
+            <option value="apsc">APS-C</option>
+            <option value="full-frame">Full Frame</option>
+        </select>
+        <label for="zoom">Zoom</label>
+        <select name="zoom" id="">
+            <option value="zoom">Zoom</option>
+            <option value="prime">Prime</option>
+        </select>
+        <label for="focus">Focus</label>
+        <select name="focus" id="">
+            <option value="auto-focus">Auto Focus</option>
+            <option value="manual-focus">Manual Focus</option>
+        </select>
+        <button type="submit">Add Lens</button>
+    </form>
 </body>
 </html>
