@@ -6,8 +6,17 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include('../partials/_navbar') %>
     <h1>Show page</h1>
     <h2><%= lens.make %> <%= lens.focalLength %>mm Specs</h2>
     <p><%= lens.aperture %> <%= lens.sensor %> <%= lens.zoom %> <%= lens.focus %></p>
+    <div class="edit-lens-btn">
+        <a href="/users/<%= user._id %>/lens/<%= lens._id %>/edit">Edit</a>
+    </div>
+    <div>
+        <form action="/users/<%= user._id %>/lens/<%= lens._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete Lens</button>
+        </form>
+    </div>
 </body>
 </html>
