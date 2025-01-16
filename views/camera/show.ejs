@@ -16,6 +16,9 @@
                 <%= camera.isInBag %>
             </p>
             <a href="/users/<%= user._id %>/camera/<%= camera._id %>/edit">Edit</a>
+            <form action="/users/<%= user._id %>/camera/<%= camera._id %>?_method=DELETE" method="POST">
+                <button>Remove Camera</button>
+            </form>
         </div>
     </body>
 </html>

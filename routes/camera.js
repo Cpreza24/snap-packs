@@ -8,5 +8,6 @@ router.post('/', cameraCtrl.postCamera);
 router.get('/:cameraId', cameraCtrl.showCamera);
 router.get('/:cameraId/edit', cameraCtrl.editCamera);
 router.put('/:cameraId', cameraCtrl.updateCamera);
+router.delete('/:cameraId', cameraCtrl.deleteCamera);
 
 module.exports = router;
