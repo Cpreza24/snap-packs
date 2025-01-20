@@ -2,7 +2,11 @@
 module.exports = {
     content: ['./views/**/*.{ejs,js}', './styles/**/*.{ejs,js}'],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                anton: ['Anton', 'sans-serif'],
+            },
+        },
     },
     plugins: [],
 };

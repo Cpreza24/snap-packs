@@ -4,12 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/assets/styles.css">
+        <%- include('./partials/_fonts.ejs') %>
         <title>Snap Packs</title>
     </head>
     <body>
         <%- include('./partials/_navbar.ejs') %>
-        <div class="bg-red-500">
-            <h1>Welcome to Snap Packs</h1>
+        <div class="flex flex-col min-h-screen my-48 p-1">
+            <h1 class="flex font-anton justify-center text-5xl pb-10">Welcome to Snap Packs</h1>
+            <h2 class="flex font-anton justify-center text-2xl mb-3">A Camera storing app to keep track of all of your gear</h2>
+            <p class="flex font-anton justify-center text-2xl mb-3"><span class="mx-1"><a class="text-teal-600 hover:text-teal-400" href="/auth/sign-in">Sign in</a></span> or <span class="mx-1"><a class="text-teal-600 hover:text-teal-400" href="auth/sign-up">Sign up</a></span> to start making packs</p>
         </div>
     </body>
 </html>
