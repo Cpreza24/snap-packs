@@ -5,33 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Lens</title>
     <link rel="stylesheet" href="/assets/styles.css">
+    <%- include('../partials/_fonts') %>
 </head>
-<body>
+<body class="bg-gray-300">
     <%- include('../partials/_navbar') %>
-    <h1>Add lens</h1>
-    <form action="/users/<%= user._id %>/lens" method="POST">
-        <label for="make">Make</label>
-        <input type="text" name="make">
-        <label for="focalLength">Focal Length</label>
-        <input type="text" name="focalLength">
-        <label for="aperture">Aperture</label>
-        <input type="text" name="aperture" id="">
-        <label for="sensor">Sensor</label>
-        <select name="sensor" id="">
-            <option value="apsc">APS-C</option>
-            <option value="full-frame">Full Frame</option>
-        </select>
-        <label for="zoom">Zoom</label>
-        <select name="zoom" id="">
-            <option value="zoom">Zoom</option>
-            <option value="prime">Prime</option>
-        </select>
-        <label for="focus">Focus</label>
-        <select name="focus" id="">
-            <option value="auto-focus">Auto Focus</option>
-            <option value="manual-focus">Manual Focus</option>
-        </select>
-        <button type="submit">Add Lens</button>
-    </form>
+    <div class="flex justify-center mt-16 p-1">
+        <h1 class="font-anton text-3xl">Add Lens</h1>
+    </div>
+    <div class="flex justify-center">
+        <form action="/users/<%= user._id %>/lens" method="POST" class="flex flex-col border-2 p-7 rounded-lg bg-gray-400">
+            <label for="make" class="text-xl font-marcellus">Make</label>
+            <input type="text" name="make" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1" required>
+            <label for="focalLength" class="text-xl font-marcellus">Focal Length</label>
+            <input type="text" name="focalLength" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1" required>
+            <label for="aperture" class="text-xl font-marcellus">Aperture</label>
+            <input type="text" name="aperture" id="" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1" required>
+            <label for="sensor" class="text-xl font-marcellus">Sensor</label>
+            <select name="sensor" id="" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1" required>
+                <option value="apsc">APS-C</option>
+                <option value="full-frame">Full Frame</option>
+            </select>
+            <label for="zoom" class="text-xl font-marcellus">Zoom</label>
+            <select name="zoom" id="" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1" required>
+                <option value="zoom">Zoom</option>
+                <option value="prime">Prime</option>
+            </select>
+            <label for="focus" class="text-xl font-marcellus">Focus</label>
+            <select name="focus" id="" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1" required>
+                <option value="auto-focus">Auto Focus</option>
+                <option value="manual-focus">Manual Focus</option>
+            </select>
+            <div class="flex justify-center">
+                <button type="submit" class="bg-zinc-800 rounded px-3 py-2 hover:bg-zinc-400 text-white">Add Gear</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

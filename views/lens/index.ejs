@@ -5,24 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lenses</title>
     <link rel="stylesheet" href="/assets/styles.css">
+    <%- include('../partials/_fonts') %>
 </head>
-<body>
+<body class="bg-gray-300">
     <%- include('../partials/_navbar') %>
-    <h1>Lens Index</h1>
-    <h2>Lens Inventory</h2>
-    <div class="flex justify-center">
+    <div class="flex justify-center mt-16 p-1">
+        <h1 class="font-anton text-3xl">Lens Gear</h1>
+    </div>
+    <div class="flex justify-center mt-10 mb-10">
+        <p class="font-anton text-2xl">Click lens to edit or delete</p>
+    </div>
+    <div class="flex justify-start mx-10 mb-10">
+        <a class="bg-zinc-800 rounded px-3 py-2 hover:bg-zinc-400 text-white" href="/users/<%=user._id%>/lens/new">Add Lens</a>
+    </div>
+    <div class="flex mx-10 px-4">
         <% if (lens.length === 0) { %>
-            <p>No lenses stored</p>
+            <p class="pl-10 text-xl">No lenses stored</p>
         <% } else { %>
-            <ul>
+            <ul class="pl-10">
                 <% lens.forEach(item => { %>
-                    <li>
-                        <a href="/users/<%= user._id %>/lens/<%= item._id %>"><%= item.make %> <%= item.focalLength %>mm</a>
+                    <li class="mx-1 my-2">
+                        <a class="hover:text-white text-xl font-marcellus" href="/users/<%= user._id %>/lens/<%= item._id %>"><%= item.make %> <%= item.focalLength %>mm</a>
                     </li>
                 <% }) %>
             </ul>
             <% } %> 
     </div>
-    <a href="/users/<%=user._id%>/lens/new">Add Lens</a>
 </body>
 </html>
