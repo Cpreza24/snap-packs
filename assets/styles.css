@@ -563,6 +563,11 @@ video {
   margin-right: 0.25rem;
 }
 
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
 .mx-60 {
   margin-left: 15rem;
   margin-right: 15rem;
@@ -576,6 +581,11 @@ video {
 .my-16 {
   margin-top: 4rem;
   margin-bottom: 4rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .my-48 {
@@ -593,6 +603,10 @@ video {
 
 .mb-5 {
   margin-bottom: 1.25rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-16 {
@@ -649,6 +663,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-center {
@@ -769,8 +787,16 @@ video {
   padding-bottom: 2.5rem;
 }
 
+.pl-10 {
+  padding-left: 2.5rem;
+}
+
 .font-anton {
   font-family: Anton, sans-serif;
+}
+
+.font-marcellus {
+  font-family: Marcellus, sans-serif;
 }
 
 .text-2xl {
@@ -830,6 +856,11 @@ video {
 .hover\:text-teal-400:hover {
   --tw-text-opacity: 1;
   color: rgb(45 212 191 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 @media (min-width: 768px) {

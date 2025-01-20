@@ -5,6 +5,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 anton: ['Anton', 'sans-serif'],
+                marcellus: ['Marcellus', 'sans-serif'],
             },
         },
     },

@@ -5,24 +5,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cameras</title>
         <link rel="stylesheet" href="/assets/styles.css">
+        <%- include('../partials/_fonts') %>
     </head>
-    <body>
+    <body class="bg-gray-300">
         <%- include('../partials/_navbar.ejs') %>
-        <h1>inventory index page</h1>
-        <h2>Camera Inventory</h2>
-        <div class="inventory-div">
+        <div class="flex justify-center mt-16 p-1">
+            <h1 class="font-anton text-3xl">Camera Gear</h1>
+        </div>
+        <div class="flex justify-center mt-10 mb-10">
+            <p class="font-anton text-2xl">Click camera body to edit or delete</p>
+        </div>
+        <div class="flex justify-start mx-10 mb-10">
+            <a class="bg-zinc-800 rounded px-3 py-2 hover:bg-zinc-400 text-white" href="/users/<%=user._id%>/camera/new">Add Camera</a>
+        </div>
+        <div class="flex mx-10 px-4">
             <% if (camera.length === 0) { %>
-                <p>Nothing in camera bag</p>
+                <p class="pl-10 text-xl">Nothing in camera bag</p>
             <% } else { %>
-                <ul>
+                <ul class="pl-10">
                     <% camera.forEach(item => { %>
-                        <li><a href="/users/<%= user._id %>/camera/<%= item._id %>"><%= item.make %> <%= item.model %></li></a>
+                        <li class="mx-1 my-2"><a class="hover:text-white text-xl font-marcellus" href="/users/<%= user._id %>/camera/<%= item._id %>"><%= item.make %> <%= item.model %></li></a>
                     <% }) %>
                 </ul>
                 <% } %>
-        </div>
-        <div class="new-camera-container">
-            <a href="/users/<%=user._id%>/camera/new">Add Camera</a>
         </div>
     </body>
 </html>
