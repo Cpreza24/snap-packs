@@ -5,16 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= user.username %>'s Profile</title>
     <link rel="stylesheet" href="/assets/styles.css">
+    <%- include('../partials/_fonts') %>
 </head>
-<body>
+<body class="bg-gray-300">
     <%- include('../partials/_navbar') %>
-    <div class="intro-container">
-        <h1>Hi <%= user.username %>, welcome to your Snap Packs page!</h1>
-        <h2>Keep track of all your camera gear in one place! Log new gear and edit or remove gear anytime. You can checkout specs by clicking on the camera body or lens.</h2>
+    <div class="flex flex-col my-16 p-1">
+        <h1 class="flex justify-center text-3xl font-anton mb-5">Hi <%= user.username %>, welcome to your Snap Packs profile!</h1>
+        <h3 class="flex justify-center text-2xl font-anton mb-5">With Snap Packs you can:</h3>
+        <div class="flex justify-between mt-7 mx-60">
+            <div class="m-3">
+                <p class=" flex justify-center w-64 text-xl font-anton rounded-lg  p-7 bg-amber-500">Keep track of all your camera gear in one place.</p>
+            </div>
+            <div class="m-3">
+                <p class="flex justify-center w-64 text-xl font-anton rounded-lg  p-8 bg-red-600">Log new gear and edit or remove gear anytime.</p> 
+            </div>
+            <div class="m-3">
+                <p class="flex justify-center w-64 text-xl font-anton rounded-lg  p-7 bg-amber-500">You can checkout your gear specs by clicking on the camera body or lens.</p>
+            </div>
+        </div>
+        <div class="flex justify-center mt-16">
+            <p class="flex w-64 text-2xl font-anton">Add some gear below</p>
+        </div>
     </div>
-    <div>
-        <a href="/users/<%= user._id %>/camera">Camera Gear</a>
-        <a href="/users/<%= user._id %>/lens">Lens Gear</a>
+    <div class="flex justify-evenly">
+        <div class="flex justify-center">
+            <a class="bg-zinc-800 rounded px-3 py-2 hover:bg-zinc-400 text-white" href="/users/<%= user._id %>/camera">Camera Gear</a>
+        </div>
+        <div class="flex justify-center">
+            <a class="bg-zinc-800 rounded px-3 py-2 hover:bg-zinc-400 text-white" href="/users/<%= user._id %>/lens">Lens Gear</a>
+        </div>
     </div>
 </body>
 </html>
