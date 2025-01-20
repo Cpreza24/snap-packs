@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lenses</title>
+    <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
     <%- include('../partials/_navbar') %>
     <h1>Lens Index</h1>
     <h2>Lens Inventory</h2>
-    <div>
+    <div class="flex justify-center">
         <% if (lens.length === 0) { %>
             <p>No lenses stored</p>
         <% } else { %>

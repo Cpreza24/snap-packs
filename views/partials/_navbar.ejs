@@ -1,11 +1,40 @@
-<nav>
-    <% if(user) { %>
-        <a href="/users/<%= user._id %>/home">Home</a>
-    <a href="/users/<%= user._id %>/camera">Cameras</a>
-    <a href="/users/<%= user._id %>/lens">Lenses</a>
-    <a href="/auth/sign-out">Sign Out</a>
-    <% } else { %>
-    <a href="/auth/sign-in">Sign In</a>
-    <a href="/auth/sign-up">Sign Up</a>
-    <% } %>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+    <nav class="bg-white border-gray-200 dark:bg-gray-500">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul>
+                    <% if(user) { %>
+                        <li>
+                            <a href="/users/<%= user._id %>/home">Home</a>
+                        </li>
+                        <li>
+                            <a href="/users/<%= user._id %>/camera">Cameras</a>
+                        </li>
+                        <li>
+                            <a href="/users/<%= user._id %>/lens">Lenses</a>
+                        </li>
+                        <li>
+                            <a href="/auth/sign-out">Sign Out</a>
+                        </li>
+                    <% } else { %>
+                        <li>
+                            <a class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" href="/auth/sign-in">Sign In</a>
+                        </li>
+                        <li>
+                            <a class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" href="/auth/sign-up">Sign Up</a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
