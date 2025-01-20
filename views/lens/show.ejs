@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= lens.make %> <%= lens.focalLength %>mm</title>
-    <link rel="stylesheet" href="/assets/styles.css">
-</head>
-<body>
-    <%- include('../partials/_navbar') %>
-    <h1>Show page</h1>
-    <h2><%= lens.make %> <%= lens.focalLength %>mm Specs</h2>
-    <p><%= lens.aperture %> <%= lens.sensor %> <%= lens.zoom %> <%= lens.focus %></p>
-    <div class="edit-lens-btn">
-        <a href="/users/<%= user._id %>/lens/<%= lens._id %>/edit">Edit</a>
-    </div>
-    <div>
-        <form action="/users/<%= user._id %>/lens/<%= lens._id %>?_method=DELETE" method="POST">
-            <button type="submit">Delete Lens</button>
-        </form>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= lens.make %> <%= lens.focalLength %>mm</title>
+        <link rel="stylesheet" href="/assets/styles.css">
+        <%- include('../partials/_fonts') %>
+    </head>
+    <body class="bg-gray-300">
+        <%- include('../partials/_navbar') %>
+        <div class="flex justify-center mt-16 p-1">
+            <h1 class="font-anton text-3xl"><%= lens.make %> <%= lens.focalLength %>mm Specs</h1>
+        </div>
+        <div class="flex justify-center mx-10 px-4 mt-24 mb-24">
+            <ul class="pl-10 border-2 p-7 rounded-lg bg-gray-400">
+                <li class="mx-1 my-2 font-marcellus text-2xl"><%= lens.make %> <%= lens.focalLength %>mm</li>
+                <li class="mx-1 my-2 font-marcellus text-2xl">Aperture: <%= lens.aperture %></li>
+                <li class="mx-1 my-2 font-marcellus text-2xl">Sensor: <%= lens.sensor %></li>
+                <li class="mx-1 my-2 font-marcellus text-2xl"><%= lens.zoom %></li>
+                <li class="mx-1 my-2 font-marcellus text-2xl"><%= lens.focus %></li>
+            </ul>
+        </div>
+        <div class="flex justify-evenly">
+            <a class="bg-zinc-800 rounded px-3 py-2 hover:bg-zinc-400 text-white"  href="/users/<%= user._id %>/lens/<%= lens._id %>/edit">Edit</a>
+            <form action="/users/<%= user._id %>/lens/<%= lens._id %>?_method=DELETE" method="POST">
+                <button class="bg-zinc-800 rounded px-3 py-2 hover:bg-zinc-400 text-white" type="submit">Remove</button>
+            </form>
+        </div>
+    </body>
 </html>

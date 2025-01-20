@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit <%= camera.model %></title>
-    <link rel="stylesheet" href="/assets/styles.css">
-    <%- include('../partials/_fonts') %>
-</head>
-<body class="bg-gray-300">
-    <%- include('../partials/_navbar') %>
-    <div class="flex justify-center mt-16 p-1">
-        <h1 class="font-anton text-3xl">Edit your <%= camera.model %></h1>
-    </div>
-    <div class="flex justify-center">
-        <form action="/users/<%= user._id %>/camera/<%= camera._id %>?_method=PUT" method="POST" class="flex flex-col border-2 p-7 rounded-lg bg-gray-400">
-            <label for="make" class="text-xl font-marcellus">Make</label>
-            <input type="text" name="make" value="<%= camera.make %>" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1">
-            <label for="model" class="text-xl font-marcellus">Model</label>
-            <input type="text" name="model" value="<%= camera.model %>" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1">
-            <label for="megapixels" class="text-xl font-marcellus">Megapixels</label>
-            <input type="text" name="megapixels" id="" value="<%= camera.megapixels %>" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1">
-            <label for="sensor" class="text-xl font-marcellus"></label>
-            <select name="sensor" id="" value="<%= camera.sensor %>" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1">
-                <option value="apsc">APS-C</option>
-                <option value="full frame">Full Frame</option>
-            </select>
-            <div class="flex justify-center">
-                <button type="submit" class="bg-zinc-800 rounded px-3 py-2 hover:bg-zinc-400 text-white">Update Camera</button>
-            </div>
-        </form>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit <%= camera.model %></title>
+        <link rel="stylesheet" href="/assets/styles.css">
+        <%- include('../partials/_fonts') %>
+    </head>
+    <body class="bg-gray-300">
+        <%- include('../partials/_navbar') %>
+        <div class="flex justify-center mt-16 p-1">
+            <h1 class="font-anton text-3xl">Edit your <%= camera.model %></h1>
+        </div>
+        <div class="flex justify-center">
+            <form action="/users/<%= user._id %>/camera/<%= camera._id %>?_method=PUT" method="POST" class="flex flex-col border-2 p-7 rounded-lg bg-gray-400">
+                <label for="make" class="text-xl font-marcellus">Make</label>
+                <input type="text" name="make" value="<%= camera.make %>" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1">
+                <label for="model" class="text-xl font-marcellus">Model</label>
+                <input type="text" name="model" value="<%= camera.model %>" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1">
+                <label for="megapixels" class="text-xl font-marcellus">Megapixels</label>
+                <input type="text" name="megapixels" id="" value="<%= camera.megapixels %>" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1">
+                <label for="sensor" class="text-xl font-marcellus"></label>
+                <select name="sensor" id="" value="<%= camera.sensor %>" class="border-2 border-solid border-neutral-950 rounded mt-3 mb-10 p-1">
+                    <option value="apsc">APS-C</option>
+                    <option value="full frame">Full Frame</option>
+                </select>
+                <div class="flex justify-center">
+                    <button type="submit" class="bg-zinc-800 rounded px-3 py-2 hover:bg-zinc-400 text-white">Update Camera</button>
+                </div>
+            </form>
+        </div>
+    </body>
 </html>
