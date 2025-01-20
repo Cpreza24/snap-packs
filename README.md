@@ -17,7 +17,7 @@ In the Show route, you have the option to edit the selected gear or remove it fr
 
 ## Desktop Version
 
-![Image of the landing page of a camera storing web application](images/snap_landing_page.PNG.PNG)
+![Image of the landing page of a camera storing web application](images/snap_landing_page.PNG)
 ![Image of the home page of a camera storing web application](images/snap_home.PNG)
 
 Try it out here [here](https://github.com/Cpreza24/snap-packs)
