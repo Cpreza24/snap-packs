@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
 const path = require('path');
-const port = process.env.PORT ? process.env.PORT : '3000';
+//const port = process.env.PORT ? process.env.PORT : '3000';
 
 const authController = require('./controllers/auth.js');
 const cameraController = require('./routes/camera.js');
@@ -53,6 +53,6 @@ app.use('/users/:userId/camera', cameraController);
 app.use('/users/:userId/home', homeController);
 app.use('/users/:userId/lens', lensController);
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`app listening on port ${port}`);
 });
