@@ -12,12 +12,10 @@ async function index(req, res) {
     }
 }
 
-//New Camera Route
 function newCamera(req, res) {
     res.render('camera/new');
 }
 
-// Create new Camera
 async function postCamera(req, res) {
     try {
         const currentUser = await User.findById(req.session.user._id);

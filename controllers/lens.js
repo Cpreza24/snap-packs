@@ -1,17 +1,14 @@
 const User = require('../models/user.js');
 
-//Index
 async function index(req, res) {
     const currentUser = await User.findById(req.session.user._id);
     res.render('lens/index', { lens: currentUser.lens });
 }
 
-// New
 async function newLens(req, res) {
     res.render('lens/new');
 }
 
-//Delete
 async function deleteLens(req, res) {
     try {
         const currentUser = await User.findById(req.session.user._id);
@@ -24,7 +21,6 @@ async function deleteLens(req, res) {
     }
 }
 
-//Update
 async function updateLens(req, res) {
     try {
         const currentUser = await User.findById(req.session.user._id);
@@ -38,7 +34,6 @@ async function updateLens(req, res) {
     }
 }
 
-//Create
 async function postCamera(req, res) {
     try {
         const currentUser = await User.findById(req.session.user._id);
@@ -51,14 +46,12 @@ async function postCamera(req, res) {
     }
 }
 
-//Edit
 async function editLens(req, res) {
     const currentUser = await User.findById(req.session.user._id);
     const lens = currentUser.lens.id(req.params.lensId);
     res.render('lens/edit', { lens: lens });
 }
 
-//Show
 async function showLens(req, res) {
     try {
         const currentUser = await User.findById(req.session.user._id);
