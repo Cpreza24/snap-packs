@@ -4,6 +4,7 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
         "dev": "nodemon server.js",
         "build-tail": "NODE_env=production tailwind build -i styles/tailwindcss.css -o assets/styles.css"
     },
