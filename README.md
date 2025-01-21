@@ -20,11 +20,11 @@ In the Show route, you have the option to edit the selected gear or remove it fr
 ![Image of the landing page of a camera storing web application](images/snap_landing_page.PNG)
 ![Image of the home page of a camera storing web application](images/snap_home.PNG)
 
-Try it out here [here](https://github.com/Cpreza24/snap-packs)
+Try it out here [here](https://snap-packs-47ffe00fbccd.herokuapp.com/)
 
 ## Attributions
 
-[ExpressJS Documentation](https://expressjs.com/) [Tailwindcss Documentation](https://tailwindcss.com/) [Stack overflow](https://stackoverflow.com/) [Contrast Accessibility Checker](https://webaim.org/resources/contrastchecker/)
+[ExpressJS Documentation](https://expressjs.com/) | [Tailwindcss Documentation](https://tailwindcss.com/) | [Stack overflow](https://stackoverflow.com/) | [Contrast Accessibility Checker](https://webaim.org/resources/contrastchecker/) |
 
 ## Future Enhancements
 
