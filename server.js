@@ -54,5 +54,5 @@ app.use('/users/:userId/home', homeController);
 app.use('/users/:userId/lens', lensController);
 
 app.listen(process.env.PORT || 5000, () => {
-    console.log(`app listening on port ${port}`);
+    console.log(`app listening on port 5000`);
 });
